@@ -6,7 +6,8 @@ import io.gatling.http.Predef._
 
 import scala.concurrent.duration.DurationInt
 
-class LoadSimulation extends BaseSimulation {
+
+class BasicLoadSimulation extends BaseSimulation {
 
   def getAllVideoGames() = {
     exec(
@@ -29,20 +30,13 @@ class LoadSimulation extends BaseSimulation {
     .exec(getAllVideoGames())
 
 
-//  // Load Simulation 1:  basic Load Simulation
+  // Load Simulation 1:  basic Load Simulation
   setUp(
     scn.inject(
       nothingFor(5 seconds), // do nothing for 5 seconds
       atOnceUsers(5), // inject 5 users at once
-      rampUsers(10) over (5 seconds) // inject 10 users over a period of 5 seconds
+      rampUsers(10) over (10 seconds) // inject 10 users over a period of 10 seconds
     ).protocols(httpConf.inferHtmlResources()) // inferHtmlResources will fetch everything on the page (JS, CSS, images etc.)
   )
-
-
-
-
-
-
-
 
 }

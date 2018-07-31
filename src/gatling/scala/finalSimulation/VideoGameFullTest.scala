@@ -14,8 +14,8 @@ class VideoGameFullTest extends BaseSimulation {
 
   /*** Variables ***/
   // runtime variables
-  def userCount: Int = getProperty("USERS", "2").toInt
-  def rampDuration: Int = getProperty("RAMP_DURATION", "1").toInt
+  def userCount: Int = getProperty("USERS", "3").toInt
+  def rampDuration: Int = getProperty("RAMP_DURATION", "10").toInt
   def testDuration: Int = getProperty("DURATION", "60").toInt
 
   // other variables
@@ -88,16 +88,19 @@ class VideoGameFullTest extends BaseSimulation {
 
   /*** Scenario Design ***/
   val scn = scenario("Video Game DB")
-    .exec(getAllVideoGames())
-    .pause(2)
-    .exec(postNewGame())
-    .pause(2)
-    .exec(getLastPostedGame())
-    .pause(2)
-    .exec(deleteLastPostedGame())
+      .forever() {
+           exec(getAllVideoGames())
+          .pause(2)
+          .exec(postNewGame())
+          .pause(2)
+          .exec(getLastPostedGame())
+          .pause(2)
+          .exec(deleteLastPostedGame())
+      }
 
 
-  /*** Setup Simulation ***/
+
+  /*** Setup Load Simulation ***/
   setUp(
     scn.inject(
       nothingFor(5 seconds),

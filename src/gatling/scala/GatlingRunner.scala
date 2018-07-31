@@ -1,6 +1,7 @@
-import finalSimulation.VideoGameFullTest
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
+import simulations._
+import finalSimulation._
 
 
 object GatlingRunner {

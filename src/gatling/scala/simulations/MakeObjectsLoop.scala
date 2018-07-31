@@ -34,6 +34,9 @@ class MakeObjectsLoop extends BaseSimulation {
     .exec(getAllVideoGames())
     .pause(5)
     .exec(getSpecificVideoGame())
+    .pause(10)
+    .exec(getAllVideoGames())
+
 
   setUp(
     scn.inject(atOnceUsers(1))

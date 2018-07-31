@@ -33,8 +33,6 @@ class RuntimeParameters extends BaseSimulation {
     exec(
       http("Get All Video Games - 1st call")
         .get("videogames")
-        .header("From", "TheFromHeader")
-        .check(regex("""Resident Evil \d"""))
         .check(status.is(200)))
   }
 
