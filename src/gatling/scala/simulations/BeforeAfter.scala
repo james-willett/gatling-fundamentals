@@ -15,8 +15,6 @@ class BeforeAfter extends BaseSimulation {
     println("Performance Test Complete")
   }
 
-  // rest of this code below is dummy code
-
   def getAllVideoGames() = {
     exec(
       http("Get All Video Games - 1st call")

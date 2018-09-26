@@ -29,7 +29,6 @@ class LoadSimulation extends BaseSimulation {
     .exec(getAllVideoGames())
 
 
-//  // Load Simulation 1:  basic Load Simulation
   setUp(
     scn.inject(
       nothingFor(5 seconds), // do nothing for 5 seconds

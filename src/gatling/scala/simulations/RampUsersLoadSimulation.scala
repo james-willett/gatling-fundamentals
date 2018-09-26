@@ -30,7 +30,6 @@ class RampUsersLoadSimulation extends BaseSimulation {
     .exec(getAllVideoGames())
 
 
-  // Load Simulation 2:  Ramping Users
   setUp(
     scn.inject(
             nothingFor(5 seconds), // do nothing for 5 seconds

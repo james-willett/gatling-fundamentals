@@ -32,7 +32,7 @@ class FixedDurationLoadSimulation extends BaseSimulation {
       }
 
 
-  // Load Simulation 3:  Run for a fixed duration
+  // Run for a fixed duration
   setUp(
     scn.inject(
             nothingFor(5 seconds),
