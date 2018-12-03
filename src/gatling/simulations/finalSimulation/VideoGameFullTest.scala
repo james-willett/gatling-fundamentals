@@ -68,7 +68,7 @@ class VideoGameFullTest extends BaseSimulation {
       feed(customFeeder).
         exec(http("Post New Game")
           .post("videogames")
-          .body(ElFileBody("NewGameTemplate.json")).asJSON //template file goes in gating/resources/bodies
+          .body(ElFileBody("NewGameTemplate.json")).asJson //template file goes in gating/resources/bodies
           .check(status.is(200)))
   }
 
@@ -104,7 +104,7 @@ class VideoGameFullTest extends BaseSimulation {
   setUp(
     scn.inject(
       nothingFor(5 seconds),
-      rampUsers(userCount) over (rampDuration seconds))
+      rampUsers(userCount) during (rampDuration seconds))
   )
     .protocols(httpConf)
     .maxDuration(testDuration seconds)

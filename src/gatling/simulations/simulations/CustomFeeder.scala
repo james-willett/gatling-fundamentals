@@ -66,7 +66,7 @@ class CustomFeeder extends BaseSimulation {
       feed(customFeeder).
         exec(http("Post New Game")
           .post("videogames")
-          .body(ElFileBody("NewGameTemplate.json")).asJSON //template file goes in gating/resources/bodies
+          .body(ElFileBody("bodies/NewGameTemplate.json")).asJson //template file goes in gating/resources/bodies
           .check(status.is(200)))
         .pause(1)
     }

@@ -35,7 +35,7 @@ class BasicLoadSimulation extends BaseSimulation {
     scn.inject(
       nothingFor(5 seconds), // do nothing for 5 seconds
       atOnceUsers(5), // inject 5 users at once
-      rampUsers(10) over (10 seconds) // inject 10 users over a period of 10 seconds
+      rampUsers(10) during (10 seconds) // inject 10 users over a period of 10 seconds
     ).protocols(httpConf.inferHtmlResources()) // inferHtmlResources will fetch everything on the page (JS, CSS, images etc.)
   )
 

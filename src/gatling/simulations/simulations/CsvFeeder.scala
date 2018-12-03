@@ -6,8 +6,8 @@ import io.gatling.http.Predef._
 
 class CsvFeeder extends BaseSimulation {
 
-  // this reads the csv file in src/gatling/resources/data
-  val csvFeeder = csv("gameCsvFile.csv").circular // random is self explanatory, other options are .queue (error if run out) and .circular (goes back to start)
+  // this reads the csv file in src/gatling/resources
+  val csvFeeder = csv("data/gameCsvFile.csv").circular // random is self explanatory, other options are .queue (error if run out) and .circular (goes back to start)
 
   def getSpecificVideoGame() = {
     repeat(10) {
